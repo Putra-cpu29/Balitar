@@ -1,0 +1,20 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Gantilah dengan branch utama yang digunakan
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: Putra-cpu29/Balitar
+        with:
+          branch: main # Branch tempat file akan dideploy
+          folder: .  # Folder yang akan di-push (gunakan "." jika semua file)
